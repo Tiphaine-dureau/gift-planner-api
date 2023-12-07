@@ -13,7 +13,6 @@ export class UserService {
 
   public async findAll(): Promise<UserModel[]> {
     const users: UserEntity[] = await this.userRepository.find();
-    console.warn(users.length);
     return users.map((user: UserEntity) => {
       return {
         id: user.id,
